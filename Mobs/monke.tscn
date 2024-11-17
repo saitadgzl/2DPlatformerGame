@@ -1,0 +1,248 @@
+[gd_scene load_steps=50 format=3 uid="uid://ch84xy4f2gfk"]
+
+[ext_resource type="Script" path="res://Mobs/monke.gd" id="1_swu1v"]
+[ext_resource type="Texture2D" uid="uid://b462t0tctq3t0" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle1.png" id="2_7w6bc"]
+[ext_resource type="Texture2D" uid="uid://bemq4ap7uriwl" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath1.png" id="2_psq1c"]
+[ext_resource type="Texture2D" uid="uid://hafuvw1swk5a" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit1.png" id="2_u805a"]
+[ext_resource type="Texture2D" uid="uid://c0iwvngh3imhr" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath2.png" id="3_1f2hx"]
+[ext_resource type="Texture2D" uid="uid://474ckvy54im8" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit2.png" id="3_bkk2e"]
+[ext_resource type="Texture2D" uid="uid://bladswkq3v4u7" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle2.png" id="3_ji0mw"]
+[ext_resource type="Texture2D" uid="uid://d33ivglpagwna" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath3.png" id="4_5vjf6"]
+[ext_resource type="Texture2D" uid="uid://da2kr10gjldlt" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle3.png" id="4_7edqk"]
+[ext_resource type="Texture2D" uid="uid://bonm6ddg6jaeu" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit3.png" id="4_13ilf"]
+[ext_resource type="Texture2D" uid="uid://cd4v4lthpsj14" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle4.png" id="5_8tmmk"]
+[ext_resource type="Texture2D" uid="uid://cdxyfofxkhchn" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath4.png" id="5_dt2ck"]
+[ext_resource type="Texture2D" uid="uid://blj2k8a0dscge" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit4.png" id="5_kw8hu"]
+[ext_resource type="Texture2D" uid="uid://ilwmihh02g3d" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit5.png" id="6_0ciku"]
+[ext_resource type="Texture2D" uid="uid://cuf8tc8b82d41" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath5.png" id="6_cybfg"]
+[ext_resource type="Texture2D" uid="uid://xystjw2vukrr" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle5.png" id="6_fc1af"]
+[ext_resource type="Texture2D" uid="uid://b20wskvj4nad1" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit6.png" id="7_7rl4q"]
+[ext_resource type="Texture2D" uid="uid://mdt6iabf1viu" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle6.png" id="7_imy83"]
+[ext_resource type="Texture2D" uid="uid://dnsudymv7hwu1" path="res://Images/Mobs/Monke/MonkeDeath/MonkeDeath6.png" id="7_k3xu6"]
+[ext_resource type="Texture2D" uid="uid://cwxm2rlmg8yfi" path="res://Images/Mobs/Monke/MonkeHit/MonkeHit7.png" id="8_62jsb"]
+[ext_resource type="Texture2D" uid="uid://xncwug0eofc3" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle7.png" id="8_snpnw"]
+[ext_resource type="Texture2D" uid="uid://c5clvrfgdeucm" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle8.png" id="9_kg6bu"]
+[ext_resource type="Texture2D" uid="uid://c0isvsl1wl8xq" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle9.png" id="10_yl7bu"]
+[ext_resource type="Texture2D" uid="uid://c25ssdx8em52c" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle10.png" id="11_nqjv6"]
+[ext_resource type="Texture2D" uid="uid://bakvi36rxx3w0" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle11.png" id="12_fgd0w"]
+[ext_resource type="Texture2D" uid="uid://ds5568fdtkkfq" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle12.png" id="13_wyedl"]
+[ext_resource type="Texture2D" uid="uid://bx6ki6i2ijxeh" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle13.png" id="14_ooswc"]
+[ext_resource type="Texture2D" uid="uid://cguwuk474qvn0" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle14.png" id="15_o61oc"]
+[ext_resource type="Texture2D" uid="uid://b35rn3vhvatdf" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle15.png" id="16_u6e58"]
+[ext_resource type="Texture2D" uid="uid://bgj5ycjr35f57" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle16.png" id="17_cca2x"]
+[ext_resource type="Texture2D" uid="uid://2cjg31rw1oit" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle17.png" id="18_o8g76"]
+[ext_resource type="Texture2D" uid="uid://p0udye66k7df" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle18.png" id="19_i1c57"]
+[ext_resource type="Texture2D" uid="uid://ccq1d3e4kdhp4" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle19.png" id="20_eiod5"]
+[ext_resource type="Texture2D" uid="uid://w2td3yp83qv3" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle20.png" id="21_la765"]
+[ext_resource type="Texture2D" uid="uid://db5yhv658a5em" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle21.png" id="22_ubxm4"]
+[ext_resource type="Texture2D" uid="uid://buxfinn4cpr76" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle22.png" id="23_ov2bp"]
+[ext_resource type="Texture2D" uid="uid://drjhkfnwqohew" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle23.png" id="24_fwa0i"]
+[ext_resource type="Texture2D" uid="uid://cm05171ng67jb" path="res://Images/Mobs/Monke/MonkeIdle/MonkeIdle24.png" id="25_c5xyj"]
+[ext_resource type="AudioStream" uid="uid://5bccxb7ilvok" path="res://Audio/monkehit2.mp3" id="33_re4gh"]
+[ext_resource type="Texture2D" uid="uid://dkgmp5cjfwucf" path="res://Images/Mobs/Monke/MonkeRun/MonkeRun1.png" id="33_ynhmy"]
+[ext_resource type="AudioStream" uid="uid://bvey2hwlbpv62" path="res://Audio/monkehit1.mp3" id="34_5ym21"]
+[ext_resource type="Texture2D" uid="uid://rn5es5e60w4i" path="res://Images/Mobs/Monke/MonkeRun/MonkeRun2.png" id="34_vhons"]
+[ext_resource type="Texture2D" uid="uid://be7kh18pvfy6c" path="res://Images/Mobs/Monke/MonkeRun/MonkeRun3.png" id="35_k0mxa"]
+[ext_resource type="Texture2D" uid="uid://dnb6yxuata74w" path="res://Images/Mobs/Monke/MonkeRun/MonkeRun4.png" id="36_ql723"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsjf8"]
+size = Vector2(87, 110.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40rih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_psq1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1f2hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5vjf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dt2ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cybfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k3xu6")
+}],
+"loop": false,
+"name": &"MonkeDeath",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u805a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bkk2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_13ilf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kw8hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0ciku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7rl4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_62jsb")
+}],
+"loop": false,
+"name": &"MonkeHit",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7w6bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ji0mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7edqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8tmmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fc1af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_imy83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_snpnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kg6bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yl7bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nqjv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fgd0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wyedl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ooswc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o61oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u6e58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cca2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o8g76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i1c57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_eiod5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_la765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ubxm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ov2bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_fwa0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_c5xyj")
+}],
+"loop": true,
+"name": &"MonkeIdle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_ynhmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vhons")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_k0mxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ql723")
+}],
+"loop": true,
+"name": &"MonkeRun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_de0x0"]
+radius = 240.033
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwkg3"]
+size = Vector2(128, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb3pu"]
+size = Vector2(100, 117)
+
+[node name="Monke" type="CharacterBody2D"]
+script = ExtResource("1_swu1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7.25)
+shape = SubResource("RectangleShape2D_jsjf8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0.5, -7.25)
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_40rih")
+animation = &"MonkeHit"
+autoplay = "MonkeIdle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_de0x0")
+
+[node name="PlayerDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamage"]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_bwkg3")
+
+[node name="DamageDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDetection"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_jb3pu")
+
+[node name="MonkeHit2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_re4gh")
+pitch_scale = 2.3
+
+[node name="MonkeHit1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_5ym21")
+volume_db = -6.857
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDamage" to="." method="_on_player_damage_body_entered"]
+[connection signal="body_entered" from="DamageDetection" to="." method="_on_damage_detection_body_entered"]

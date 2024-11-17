@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspafqv50xc44"]
+
+[ext_resource type="Texture2D" uid="uid://c800n0hp1o7xj" path="res://Images/Effects/FallEffect.png" id="1_31mfm"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ahs7m"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 537.97
+initial_velocity_max = 537.97
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+scale_min = 0.1
+scale_max = 0.4
+
+[node name="FallEffect" type="GPUParticles2D"]
+position = Vector2(483, 438)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_ahs7m")
+texture = ExtResource("1_31mfm")

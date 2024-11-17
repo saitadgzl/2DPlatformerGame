@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl527l1hmrfqe"]
+
+[ext_resource type="Script" path="res://Objects/machine_bullet.gd" id="1_iucsv"]
+[ext_resource type="Texture2D" uid="uid://d1c5eala5xn6x" path="res://Images/Objects/MachineBullet/MachineBullet.png" id="1_vfjox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fruj5"]
+radius = 25.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umsyv"]
+radius = 8.0
+
+[node name="MachineBullet" type="CharacterBody2D"]
+script = ExtResource("1_iucsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_fruj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_vfjox")
+
+[node name="GiveDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GiveDamage"]
+scale = Vector2(0.935, 0.935)
+shape = SubResource("CircleShape2D_umsyv")
+
+[connection signal="body_entered" from="GiveDamage" to="." method="_on_give_damage_body_entered"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://u8jluobe5xni"]
+
+[ext_resource type="Script" path="res://Objects/rock.gd" id="1_n7ksl"]
+[ext_resource type="Texture2D" uid="uid://d0in1fl16wspt" path="res://Images/Objects/Rock/RockNormal.png" id="2_nik6j"]
+[ext_resource type="Texture2D" uid="uid://f08ug66b5m04" path="res://Images/Objects/Rock/RockCracked.png" id="3_rkkre"]
+[ext_resource type="AudioStream" uid="uid://bucnyktkxv8ue" path="res://Audio/HitRock.mp3" id="4_vpyag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvc7g"]
+size = Vector2(15.6306, 19.9467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwxqq"]
+size = Vector2(44, 42)
+
+[node name="Rock" type="Area2D"]
+visibility_layer = 17
+script = ExtResource("1_n7ksl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.0750008)
+scale = Vector2(2.815, 2.815)
+shape = SubResource("RectangleShape2D_jvc7g")
+
+[node name="Cracked" type="Sprite2D" parent="."]
+scale = Vector2(0.027, 0.027)
+texture = ExtResource("3_rkkre")
+
+[node name="Normal" type="Sprite2D" parent="."]
+scale = Vector2(0.027, 0.027)
+texture = ExtResource("2_nik6j")
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_jwxqq")
+
+[node name="HitRock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vpyag")
+volume_db = -13.289
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]

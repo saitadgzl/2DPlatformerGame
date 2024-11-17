@@ -1,0 +1,158 @@
+[gd_scene load_steps=21 format=3 uid="uid://cdk7msxbamlwr"]
+
+[ext_resource type="Script" path="res://Levels/test_level.gd" id="1_4yhee"]
+[ext_resource type="Texture2D" uid="uid://dvwgmuqmb6mgt" path="res://Images/Tiles/Tile1.png" id="1_evaaa"]
+[ext_resource type="Texture2D" uid="uid://day1vs03o2p1k" path="res://Images/Tiles/Tile2.png" id="2_65md8"]
+[ext_resource type="PackedScene" uid="uid://dp3tea0c8piig" path="res://Character/player.tscn" id="3_kdbht"]
+[ext_resource type="PackedScene" uid="uid://c7d15rdw58ufn" path="res://Mobs/bug.tscn" id="4_hb8xn"]
+[ext_resource type="Script" path="res://Levels/Camera2D.gd" id="4_nqe5f"]
+[ext_resource type="Script" path="res://Levels/Label.gd" id="5_jlgce"]
+[ext_resource type="Script" path="res://Levels/Label2.gd" id="6_kubbc"]
+[ext_resource type="PackedScene" uid="uid://gy1ehfnb6d0m" path="res://Objects/ammo.tscn" id="7_2xafx"]
+[ext_resource type="Script" path="res://Objects/fall_effect.gd" id="8_p1p8i"]
+[ext_resource type="PackedScene" uid="uid://ch84xy4f2gfk" path="res://Mobs/monke.tscn" id="8_vphud"]
+[ext_resource type="PackedScene" uid="uid://dry1jhgdtcdx2" path="res://Objects/machine.tscn" id="10_yu3hl"]
+[ext_resource type="PackedScene" uid="uid://u8jluobe5xni" path="res://Objects/rock.tscn" id="12_df0p0"]
+[ext_resource type="AudioStream" uid="uid://67g3uxqpybf6" path="res://Audio/StartFalling.mp3" id="13_ni3r3"]
+[ext_resource type="PackedScene" uid="uid://dspafqv50xc44" path="res://Objects/fall_effect.tscn" id="14_p27dq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vpap"]
+texture = ExtResource("1_evaaa")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpb6c"]
+texture = ExtResource("2_65md8")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qktdn"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0vpap")
+sources/1 = SubResource("TileSetAtlasSource_wpb6c")
+
+[sub_resource type="Curve2D" id="Curve2D_n43ka"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 185, -1080, 0, 0, 0, 0, 185, 2121)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nubwm"]
+size = Vector2(87, 133)
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_4yhee")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qktdn")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589841, 0, 0, 589839, 0, 0, 589840, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 655382, 0, 0, 720918, 0, 0, 786454, 0, 0, 851990, 0, 0, 917526, 0, 0, 983062, 0, 0, 1048598, 0, 0, 1114134, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 917516, 0, 0, 983052, 0, 0, 1048588, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1179663, 0, 0, 1245199, 0, 0, 1245198, 0, 0, 1245197, 0, 0, 1245196, 0, 0, 1245195, 0, 0, 1245194, 0, 0, 1245193, 0, 0, 1245192, 0, 0, 1245191, 0, 0, 1310727, 0, 0, 1376263, 0, 0, 1114133, 0, 0, 1114132, 0, 0, 1114131, 0, 0, 1114130, 0, 0, 1179666, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1179672, 0, 0, 1114136, 0, 0, 1048600, 0, 0, 983064, 0, 0, 917528, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 917530, 0, 0, 983066, 0, 0, 1048602, 0, 0, 1114138, 0, 0, 1179674, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1179676, 0, 0, 1114140, 0, 0, 1048604, 0, 0, 983068, 0, 0, 983069, 0, 0, 983070, 0, 0, 1048606, 0, 0, 1114142, 0, 0, 1179678, 0, 0, 1245214, 0, 0, 1310750, 0, 0, 1376286, 0, 0, 1376261, 0, 0, 1310725, 0, 0, 1245189, 0, 0, 1179653, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1048586, 0, 0, 983050, 0, 0, 917514, 0, 0, 851978, 0, 0, 786442, 0, 0, 720906, 0, 0, 655370, 0, 0, 589834, 0, 0, 589833, 0, 0, 589832, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 851973, 0, 0, 851972, 0, 0, 851971, 0, 0, 851970, 0, 0, 1179649, 0, 0, 1114113, 0, 0, 1048577, 0, 0, 983041, 0, 0, 917505, 0, 0, 851969, 0, 0, 1245185, 0, 0, 1310721, 0, 0, 1376257, 0, 0, 786457, 1, 0, 917534, 1, 0, 917533, 1, 0, 786436, 1, 0, 786435, 1, 0, 786433, 1, 0, 1179669, 1, 0, 1179660, 1, 0, 1179659, 1, 0, 1179657, 1, 0, 1179656, 1, 0, 1179675, 1, 0, 1441822, 0, 0, 1507358, 0, 0, 1572894, 0, 0, 1638430, 0, 0, 1638429, 0, 0, 1638428, 0, 0, 1638427, 0, 0, 1638426, 0, 0, 1703962, 0, 0, 1769498, 0, 0, 1835034, 0, 0, 1900570, 0, 0, 1900571, 0, 0, 1966107, 0, 0, 2031643, 0, 0, 1441793, 0, 0, 1507329, 0, 0, 1572865, 0, 0, 1638401, 0, 0, 1703937, 0, 0, 1703938, 0, 0, 1703939, 0, 0, 1703940, 0, 0, 1441797, 0, 0, 1507333, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 2097179, 0, 0, 2097178, 0, 0, 2097177, 0, 0, 2097176, 0, 0, 2097175, 0, 0, 2097173, 0, 0, 2097172, 0, 0, 2097171, 0, 0, 2097170, 0, 0, 2097169, 0, 0, 2293787, 0, 0, 2293786, 0, 0, 2293785, 0, 0, 2293784, 0, 0, 2293783, 0, 0, 2293782, 0, 0, 2293781, 0, 0, 2293780, 0, 0, 2293779, 0, 0, 2293778, 0, 0, 2293777, 0, 0, 2293776, 0, 0, 2293788, 0, 0, 2293789, 0, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2228262, 0, 0, 2162726, 0, 0, 2097190, 0, 0, 2031654, 0, 0, 1966118, 0, 0, 1966119, 0, 0, 1966120, 0, 0, 2031656, 0, 0, 2097192, 0, 0, 2162728, 0, 0, 2228264, 0, 0, 2293800, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572877, 0, 0, 1572878, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1638416, 0, 0, 1703952, 0, 0, 1703953, 0, 0, 1703954, 0, 0, 1703955, 0, 0, 1703956, 0, 0, 1703957, 0, 0, 1441813, 0, 0, 1441812, 0, 0, 2097168, 0, 0, 2097167, 0, 0, 2097166, 0, 0, 2097165, 0, 0, 2031629, 0, 0, 1966093, 0, 0, 1900557, 0, 0, 1835021, 0, 0, 1835020, 0, 0, 1835019, 0, 0, 1835018, 0, 0, 1835014, 0, 0, 1835013, 0, 0, 1835012, 0, 0, 1769476, 0, 0, 1900554, 0, 0, 1966090, 0, 0, 2031626, 0, 0, 2097162, 0, 0, 2162698, 0, 0, 2228234, 0, 0, 2293770, 0, 0, 2293769, 0, 0, 2293768, 0, 0, 2293767, 0, 0, 2293766, 0, 0, 2293765, 0, 0, 1900550, 0, 0, 1966086, 0, 0, 2031622, 0, 0, 2097158, 0, 0, 2162694, 0, 0, 2162693, 0, 0, 2162692, 0, 0, 2162691, 0, 0, 2162690, 0, 0, 2228226, 0, 0, 2293762, 0, 0, 1507336, 1, 0, 1638418, 1, 0, 2228242, 1, 0, 1900583, 1, 0, 1900584, 1, 0, 2228258, 1, 0, 2228254, 1, 0, 2228251, 1, 0, 2228249, 1, 0, 2228250, 1, 0, 2097156, 1, 0, 2097155, 1, 0, 2097154, 1, 0, 2228261, 1, 0, 1441814, 0, 0, 1441815, 0, 0, 1572887, 0, 0, 1507351, 0, 0, 1638423, 0, 0, 1769495, 0, 0, 1703959, 0, 0, 1769493, 0, 0, 1835029, 0, 0, 1900565, 0, 0, 1966101, 0, 0, 2031637, 0, 0, 2031639, 0, 0, 1966103, 0, 0, 1900567, 0, 0, 1835031, 0, 0, 1507372, 0, 0, 1507371, 0, 0, 1507370, 0, 0, 1507369, 0, 0, 1572905, 0, 0, 1638441, 0, 0, 1638442, 0, 0, 1638443, 0, 0, 1638444, 0, 0, 1638445, 0, 0, 1638446, 0, 0, 1507373, 0, 0, 1703982, 0, 0, 1769518, 0, 0, 1835054, 0, 0, 1900590, 0, 0, 1966126, 0, 0, 2031662, 0, 0, 2097198, 0, 0, 2162734, 0, 0, 2228270, 0, 0, 2293806, 0, 0, 2359342, 0, 0, 2424878, 0, 0, 2490414, 0, 0, 2555950, 0, 0, 2621486, 0, 0, 2687022, 0, 0, 2687023, 0, 0, 2687024, 0, 0, 2687025, 0, 0, 2752561, 0, 0, 2818097, 0, 0, 2883633, 0, 0, 2883632, 0, 0, 2883631, 0, 0, 2883630, 0, 0, 2883629, 0, 0, 2883628, 0, 0, 2883627, 0, 0, 2883626, 0, 0, 2883625, 0, 0, 2883624, 0, 0, 2883623, 0, 0, 2883622, 0, 0, 2883621, 0, 0, 2818085, 0, 0, 2752549, 0, 0, 2687013, 0, 0, 2621477, 0, 0, 2555941, 0, 0, 2490405, 0, 0, 2490406, 0, 0, 2490407, 0, 0, 2490408, 0, 0, 2424872, 0, 0, 2359336, 0, 0, 1441837, 0, 0, 1376301, 0, 0, 1310765, 0, 0, 1245229, 0, 0, 1179693, 0, 0, 1114157, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1114159, 0, 0, 1179695, 0, 0, 1245231, 0, 0, 1310767, 0, 0, 1376303, 0, 0, 1441839, 0, 0, 1507375, 0, 0, 589831, 0, 0)
+
+[node name="Rock" parent="." instance=ExtResource("12_df0p0")]
+position = Vector2(187, 621)
+
+[node name="Player" parent="." instance=ExtResource("3_kdbht")]
+position = Vector2(185, -2580)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(185, -2580)
+zoom = Vector2(1.305, 1.305)
+script = ExtResource("4_nqe5f")
+
+[node name="Timer" type="Timer" parent="Camera2D"]
+
+[node name="FallEffect" parent="Camera2D" instance=ExtResource("14_p27dq")]
+position = Vector2(-3, 500)
+scale = Vector2(7.435, 2.8)
+amount = 150
+script = ExtResource("8_p1p8i")
+
+[node name="TimerFallEffect" type="Timer" parent="Camera2D/FallEffect"]
+wait_time = 2.6
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Monke" parent="Mobs" instance=ExtResource("8_vphud")]
+position = Vector2(1082, 386)
+
+[node name="Bug" parent="Mobs" instance=ExtResource("4_hb8xn")]
+position = Vector2(3016, -653)
+
+[node name="Bug3" parent="Mobs" instance=ExtResource("4_hb8xn")]
+position = Vector2(3324, -473)
+
+[node name="Bug4" parent="Mobs" instance=ExtResource("4_hb8xn")]
+position = Vector2(3501, -542)
+
+[node name="Bug2" parent="Mobs" instance=ExtResource("4_hb8xn")]
+position = Vector2(3520, -442)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 72.0
+offset_top = 60.0
+offset_right = 127.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "HP"
+script = ExtResource("5_jlgce")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 74.0
+offset_top = 105.0
+offset_right = 167.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "AMMO"
+script = ExtResource("6_kubbc")
+
+[node name="Ammo" parent="." instance=ExtResource("7_2xafx")]
+position = Vector2(1271, 620)
+
+[node name="Machine" parent="." instance=ExtResource("10_yu3hl")]
+position = Vector2(445, 395)
+
+[node name="OpeningCutscene" type="Node2D" parent="."]
+position = Vector2(0, -1500)
+
+[node name="Path2D" type="Path2D" parent="OpeningCutscene"]
+curve = SubResource("Curve2D_n43ka")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="OpeningCutscene/Path2D"]
+position = Vector2(185, -1080)
+rotation = 1.5708
+
+[node name="CutsceneCam" type="Camera2D" parent="OpeningCutscene/Path2D/PathFollow2D"]
+zoom = Vector2(1.305, 1.305)
+
+[node name="StartingDetection" type="Area2D" parent="OpeningCutscene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpeningCutscene/StartingDetection"]
+position = Vector2(184, -1081)
+shape = SubResource("RectangleShape2D_nubwm")
+
+[node name="StartFalling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ni3r3")
+volume_db = -13.867
+
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera2D/FallEffect/TimerFallEffect" to="Camera2D/FallEffect" method="_on_timer_fall_effect_timeout"]
+[connection signal="body_entered" from="OpeningCutscene/StartingDetection" to="." method="_on_starting_detection_body_entered"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dry1jhgdtcdx2"]
+
+[ext_resource type="Script" path="res://Objects/Machine.gd" id="1_bnawj"]
+[ext_resource type="Texture2D" uid="uid://df37amlk5afhu" path="res://Images/Objects/Machine/Barrel/Barrel1.png" id="2_kig08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c258"]
+size = Vector2(31.3312, 20.1226)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sc8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kig08")
+}],
+"loop": true,
+"name": &"Barrel",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_5y7xx"]
+script/source = "extends Marker2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Machine" type="Area2D"]
+script = ExtResource("1_bnawj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.58726)
+scale = Vector2(6.16, 4.034)
+shape = SubResource("RectangleShape2D_4c258")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_7sc8c")
+animation = &"Barrel"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -178.0
+offset_top = -114.0
+offset_right = 215.0
+offset_bottom = -88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Makineli Tüfeği Kullanmak İçin 'E' Tuşuna Bas"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(43, 0)
+script = SubResource("GDScript_5y7xx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

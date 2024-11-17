@@ -1,0 +1,150 @@
+[gd_scene load_steps=21 format=3 uid="uid://dry1jhgdtcdx2"]
+
+[ext_resource type="Script" path="res://Objects/Machine.gd" id="1_bnawj"]
+[ext_resource type="Texture2D" uid="uid://df37amlk5afhu" path="res://Images/Objects/Machine/Barrel/Barrel1.png" id="2_kig08"]
+[ext_resource type="Texture2D" uid="uid://0j3h87fumavt" path="res://Images/Objects/Machine/Base/MachineBase1.png" id="2_uqpoq"]
+[ext_resource type="Texture2D" uid="uid://djwk0njsh8uli" path="res://Images/Objects/Machine/Shoot/Shoot1.png" id="3_a6h4k"]
+[ext_resource type="AudioStream" uid="uid://dupb7svtkg8cr" path="res://Audio/machinegunshot.mp3" id="3_ac7fq"]
+[ext_resource type="Texture2D" uid="uid://c7rlsxm2eulc2" path="res://Images/Objects/Machine/Shoot/Shoot2.png" id="4_j4na3"]
+[ext_resource type="Texture2D" uid="uid://dsxhej1sv2cnm" path="res://Images/Objects/Machine/Shoot/Shoot3.png" id="5_tg50j"]
+[ext_resource type="Texture2D" uid="uid://bkvkfc7jedmyd" path="res://Images/Objects/Machine/Shoot/Shoot4.png" id="6_wo226"]
+[ext_resource type="Texture2D" uid="uid://lhhw5a64dnei" path="res://Images/Objects/Machine/Shoot/Shoot5.png" id="7_m73a1"]
+[ext_resource type="Texture2D" uid="uid://dchpc7jxbu4v0" path="res://Images/Objects/Machine/Shoot/Shoot6.png" id="8_dx12n"]
+[ext_resource type="Texture2D" uid="uid://dp1txoccnxkyk" path="res://Images/Objects/Machine/Shoot/Shoot7.png" id="9_eo0bl"]
+[ext_resource type="Texture2D" uid="uid://cw7gn001g0pg6" path="res://Images/Objects/Machine/Shoot/Shoot8.png" id="10_wkvq0"]
+[ext_resource type="Texture2D" uid="uid://csy8u6pu4rci" path="res://Images/Objects/Machine/Shoot/Shoot9.png" id="11_64enw"]
+[ext_resource type="Texture2D" uid="uid://derqitur4tsbg" path="res://Images/Objects/Machine/Shoot/Shoot10.png" id="12_p8bao"]
+[ext_resource type="Texture2D" uid="uid://ctqjn6l8nifxt" path="res://Images/Objects/Machine/Shoot/Shoot11.png" id="13_nly17"]
+[ext_resource type="Texture2D" uid="uid://duyfb81o63j8v" path="res://Images/Objects/Machine/Shoot/Shoot12.png" id="14_q5bmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c258"]
+size = Vector2(31.3312, 24.5847)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sc8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kig08")
+}],
+"loop": true,
+"name": &"Barrel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a6h4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j4na3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tg50j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wo226")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m73a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dx12n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eo0bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wkvq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_64enw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p8bao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nly17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q5bmu")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 23.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_5y7xx"]
+script/source = "extends Marker2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb1hd"]
+size = Vector2(107, 64)
+
+[node name="Machine" type="Area2D"]
+script = ExtResource("1_bnawj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 8.41273)
+scale = Vector2(6.16, 4.034)
+shape = SubResource("RectangleShape2D_4c258")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, -13.965)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_uqpoq")
+
+[node name="Barrel" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_7sc8c")
+animation = &"Shoot"
+
+[node name="Marker2D" type="Marker2D" parent="Barrel"]
+position = Vector2(575, 0)
+scale = Vector2(12.5, 12.5)
+script = SubResource("GDScript_5y7xx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -178.0
+offset_top = -114.0
+offset_right = 215.0
+offset_bottom = -88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Makineli Tüfeği Kullanmak İçin 'E' Tuşuna Bas"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -178.0
+offset_top = -114.0
+offset_right = 215.0
+offset_bottom = -88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Makineli Tüfeği Bırakmak İçin 'Q' Tuşuna Bas"
+
+[node name="MachineGunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ac7fq")
+
+[node name="Label2Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TakeDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_eb1hd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Label2Timer" to="." method="_on_label_2_timer_timeout"]
+[connection signal="body_entered" from="TakeDamage" to="." method="_on_take_damage_body_entered"]

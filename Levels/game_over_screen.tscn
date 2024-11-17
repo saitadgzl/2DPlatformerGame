@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv0wgys3o35rw"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_ofcjs"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ofcjs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+
+[node name="YenidenOynaButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Yeniden Oyna"
+
+[node name="MenuyeDonButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menüye Dön"
